@@ -1,74 +1,539 @@
 <!DOCTYPE html>
-  <html>
-    <head>
-      <!--Import Google Icon Font-->
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <!-- Compiled and minified CSS -->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
-      <!--Let browser know website is optimized for mobile-->
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    </head>
-    
-    <body>
-   
-<div class="container">
+<html>
+<head>
+<title>MathJax Test Page</title>
 
 
-  <div class="row">
-        <div class="input-field col s12">
-          <i class="material-icons prefix">account_circle</i>
-          <input id="username" type="text" class="validate">
-          <label for="username">Tu Nombre + AP PATERNO+AP MATERNO</label>
-        </div>
-        <div class="input-field col s12">
-          <i class="material-icons prefix">phone</i>
-          <input id="tel" type="text" class="validate">
-          <label for="icon_telephone">Telefono</label>
-        </div>
-        <div class="input-field col s12">
-          <button class="btn waves-effect waves-light" id="btn">Add
-            <i class="material-icons right">send</i>
-          </button>
-         </div>
-      </div><!--END ROW-->
-      
-  </div>
-    
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script>
-    var nameBox = document.getElementById("username");
-    var phoneBox = document.getElementById("tel");
-   
-    document.getElementById("btn").addEventListener("click",addRecord);
-    function addRecord(){
-    var name = nameBox.value;
-    var phone = phoneBox.value;
-    
-     if(name.trim().length == 0 || phone.trim().length == 0){
-        //MOSTRAR ERROR MANUALMENTE
-        //M.toast({html: 'Nombre y Telefono son Requeridos sin Espacios Vacios  y Mayusculas !!....'});
-        // 'rounded' is the class I'm applying to the toast
-        M.toast({html: 'Nombre y Telefono son Requeridos sin Espacios Vacios  y Mayusculas !!....', classes: 'rounded'});
-        }else{
-     
-          var data = {
-          name: nameBox.value,
-          phone: phoneBox.value
-          };
-    
-          google.script.run.appendData(data);
-          nameBox.value = "";
-          phoneBox.value ="";
-       }//close else
-    }//close addRecord
-    
-    </script>
-    
-    
-    
-    
-    
+<!--mathjax-->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {equationNumbers: { autoNumber:"AMS"}},
+  "HTML-CSS": { availableFonts: ["Tex"] }
+});
+</script>
+
+
+
+
+
+<style>
+body {
+  counter-reset: myAwesomeCounter;
+  background-color: #094C50;
+  color: black;
+  font-family: serif;
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h1 {
+  color: black;
+  text-align: center;
+  background-color: #075e57;
+}
+
+h2 {
+  color: brow;
+  text-align: left;
+  background-color: #0CA481;
+  border: 1px solid red;
+  border-radius: 3px 3px;
+  border-spacing: 15px;
+  display: block;
+  font-size: 1.17em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: ;
+  margin-right: 0;
+}
+
+
+p {
+  font-family: serif;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+p.a {
+  word-break: normal;
+}
+
+p.b {
+  word-break: keep-all;
+}
+
+p.c {
+  word-break: break-all;
+}
+
+
+.article {
+	counter-reset: figures;
+}
+
+.figure figcaption {
+	counter-increment: figures;
+}
+
+.figure figcaption:before {
+	content: 'Fig. ' counter(figures) ' - ';
+}
+
+.figure figcaption {
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 0.8em;
+	padding: .5em;
+	text-align: center;
+	color: #fff;
+	background: #f5bca8;
+}
+
+td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+
+
+</style>
+</head>
+
+
+
+
+
+
+<body>
+
+<noscript>
+<div style="color:#CC0000; text-align:center">
+<b>Warning: <a href="http://www.mathjax.org/">MathJax</a>
+requires JavaScript to process the mathematics on this page.<br />
+If your browser supports JavaScript, be sure it is enabled.</b>
+</div>
+<hr>
+</noscript>
+
+<h1>Sample MathJax Equations</h1>
+
+
+<div style="text-align: center;">
+<iframe height="1000px" scrolling="yes" src="https://www.geogebra.org/material/iframe/id/MSR2GCc7/width/800/height/1000/border/888888/smb/true/stb/true/stbh/true/ai/true/asb/true/sri/true/rc/true/ld/true/sdz/true/ctl/true" style="border: 0px;" title="Vector y recta " width="800px"> </iframe>
+
+
+<p class="b">
+To make sure floated figures don’t behave oddly on small screens, we need to override a couple of styles to make them full-width and horizontally centered. If you’re building your site using a mobile first approach, you’ll do it the other way but it doesn’t matter really.
+To make sure floated figures don’t behave oddly on small screens, we need to override a couple of styles to make them full-width and horizontally centered. If you’re building your site using a mobile first approach, you’ll do it the other way but it doesn’t matter really.
+ \begin{align*}
+\dot{x} & = \sigma(y-x) \\
+\dot{y} & = \rho x - y - xz \\
+\dot{z} & = -\beta z + xy
+\end{align*} 
+To make sure floated figures don’t behave oddly on small screens, we need to override a couple of styles to make them full-width and horizontally centered. If you’re building your site using a mobile first approach, you’ll do it the other way but it doesn’t matter really.
+</p>
+
+<h2>word-break: normal (default):</h2>
+<p class="a">Thisissomeveryveryverylong word. Words will break according to usual rules.</p>
+
+<h2>word-break: keep-all:</h2>
+<p class="b">Thisissomeveryveryverylong word. This text will-break-at-hyphens.</p>
+
+<h2>word-break: break-all:</h2>
+<p class="c">Thisissomeveryveryverylong word. This text will break at any character.</p>
+
+
+<h2>The Lorenz Equations</h2>
+<div class="form-row">
+<label>\(\sqrt{3x-1}+(1+x)^2=\)</label><input type="text" id="w1">
+</div>
+<div class="form-row">
+<label>\(\sqrt{3x-1}+(1+x)^2=\)</label><input type="text" id="w2">
+</div>
+
+<div class="form-row">
+<label>\(\sqrt{3x-1}+(1+x)^2=\)</label><input type="text" id="w3">
+</div>
+
+<div class="form-row">
+<label>Aplicaciones \(\sqrt{3x-1}+(1+x)^2=\)</label>
+<select id="app">
+<option>\(\sqrt{3x-1}+(1+x)^2=9\)</option>
+<option>\(\sqrt{3x-1}+(1+x)^2=5\)</option>
+<option>\(\sqrt{3x-1}+(1+x)^2=3\)</option>
+</select>
+<div>
+<button id="btn">Registrar</button>
+
+<script>
+
+
+  document.getElementById("btn").addEventListener("click",doStuff);
+  
+  function doStuff(){
+      var er={};
+  
+      er.we = document.getElementById("w1").value;
+      er.wee = document.getElementById("w2").value;
+      er.weee = document.getElementById("w3").value;
+            er.weee = document.getElementById("app").value;
+      google.script.run.userClicked(er);
+      document.getElementById("w1").value = "";      
+      document.getElementById("w2").value = ""; 
+      document.getElementById("w3").value = "";      
+      document.getElementById("app").value = ""; 
+}
+
+
+</script>
+
+
+<h3>www</h3>
+
+Select your favorite color: <input type="color" id="r">
+
+<p>Click the "Try it" button to get the color of the color picker.</p>
+
+<button onclick="re()">Try it</button>
+
+<p><b>Note:</b> type="color" is not supported in Internet Explorer 11 and earlier versions or Safari 9.1 and earlier versions.</p>
+
+<p id="demo"></p>
+
+<script>
+function re() {
+  var x = document.getElementById("r").value;
+  document.getElementById("demo").innerHTML = x;
+}
+</script>
+
+
+
+
+
+
+<h3>A demonstration of how to access a Search field</h3>
+
+<input type="search" id="mySearch" placeholder="Search for something..">
+
+<p>Click the button to get the placeholder text of the search field.</p>
+
+<button onclick="rrw()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+function rrw() {
+  var x = document.getElementById("mySearch").placeholder;
+  document.getElementById("demo").innerHTML = x;
+}
+</script>
+
+
+
+<input type="date" id="myDate" value="2014-02-09">
+
+<p>Click the button to get the date of the date field.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p><strong>Note:</strong> input elements with type="date" do not show as any date field/calendar in IE 11 and earlier versions.</p>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myDate").value;
+  document.getElementById("demo").innerHTML = x;
+}
+</script>
+
+
+
+<form action="/action_page.php" id="form1">
+  <label for="fname">First name:</label>
+  <input type="text" id="fname" name="fname"><br><br>
+  <input type="submit" value="Submit">
+</form>
+
+<label for="lname">Last name:</label>
+<input type="text" id="lname" name="lname" form="form1">
+
+<div>
+<label for="disk_c">Disk usage C:</label>
+<meter id="disk_c" value="2" min="0" max="10">2 out of 10</meter><br>
+
+<label for="disk_d">Disk usage D:</label>
+<meter id="disk_d" value="0.6">60%</meter>
+</div>
+
+<center>
+<iframe  width="800" height="500" src="https://www.youtube.com/embed/tWJk0RmZ5uU?start=251" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<iframe src="https://www.xvideos.com/embedframe/46618037" frameborder=0 width=800 height=500 scrolling=no allowfullscreen=allowfullscreen></iframe>
+
+<iframe src="https://www.xvideos.com/embedframe/26754231" frameborder=0 width=800 height=500 scrolling=no allowfullscreen=allowfullscreen></iframe>
+</center>
+
+
+
+\begin{align*}
+\dot{x} & = \sigma(y-x) \\
+\dot{y} & = \rho x - y - xz \\
+\dot{z} & = -\beta z + xy
+\end{align*}
+
+
+<h2>The Cauchy-Schwarz Inequality</h2>
+
+\[
+\left( \sum_{k=1}^n a_k b_k \right)^{\!\!2} \leq
+ \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)
+\]
+
+<h2>A Cross Product Formula</h2>
+
+\[
+  \mathbf{V}_1 \times \mathbf{V}_2 =
+   \begin{vmatrix}
+    \mathbf{i} & \mathbf{j} & \mathbf{k} \\
+    \frac{\partial X}{\partial u} & \frac{\partial Y}{\partial u} & 0 \\
+    \frac{\partial X}{\partial v} & \frac{\partial Y}{\partial v} & 0 \\
+   \end{vmatrix}
+\]
+
+<h2>The probability of getting \(k\) heads when flipping \(n\) coins is:</h2>
+
+\[P(E) = {n \choose k} p^k (1-p)^{ n-k} \]
+
+<h2>An Identity of Ramanujan</h2>
+
+\[
+   \frac{1}{(\sqrt{\phi \sqrt{5}}-\phi) e^{\frac25 \pi}} =
+     1+\frac{e^{-2\pi}} {1+\frac{e^{-4\pi}} {1+\frac{e^{-6\pi}}
+      {1+\frac{e^{-8\pi}} {1+\ldots} } } }
+\]
+<h2>A Rogers-Ramanujan Identity</h2>
+
+\[
+  1 +  \frac{q^2}{(1-q)}+\frac{q^6}{(1-q)(1-q^2)}+\cdots =
+    \prod_{j=0}^{\infty}\frac{1}{(1-q^{5j+2})(1-q^{5j+3})},
+     \quad\quad \text{for $|q|<1$}.
+\]
+
+<h2>Maxwell's Equations</h2>
+
+
+\begin{align}
+  \nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} & = \frac{4\pi}{c}\vec{\mathbf{j}} \\
+  \nabla \cdot \vec{\mathbf{E}} & = 4 \pi \rho \\
+  \nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} & = \vec{\mathbf{0}} \\
+  \nabla \cdot \vec{\mathbf{B}} & = 0
+\end{align}
+
+
+<h3>In-line Mathematics</h3>
+
+Finally, while display equations look good for a page of samples, the
+ability to mix math and text in a paragraph is also important.  This
+expression \(\sqrt{3x-1}+(1+x)^2\) is an example of an inline equation.  As
+you see, MathJax equations can be used this way as well, without unduly
+disturbing the spacing between lines.
+
+
+
+
+
+<table style="width:100%" rules="all">
+  <tr>
+    <th>Firstname</th>
+    <th>Lastname</th>
+    <th>Age</th>
+  </tr>
+  <tr>
+    <td>Jill</td>
+    <td>Smith</td>
+    <td>50</td>
+  </tr>
+  <tr>
+    <td>Eve</td>
+    <td>Jackson</td>
+    <td>94</td>
+  </tr>
+</table>
+
+\begin{align}
+  \nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} & = \frac{4\pi}{c}\vec{\mathbf{j}} \\
+  \nabla \cdot \vec{\mathbf{E}} & = 4 \pi \rho \\
+  \nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} & = \vec{\mathbf{0}} \\
+  \nabla \cdot \vec{\mathbf{B}} & = 0
+\end{align}
+
+<table style="width:100%" rules="all">
+  <figcaption>Here is the legend for your image<figcaption>
+  <tr>
+    <th>Month</th>
+    <th>Savings</th>
+  </tr>
+  <tr>
+    <td>January</td>
+    <th align="center"><span class="math display">\[f_i=\int_1^2\]</span></th>
+  </tr>
+  <tr>
+    <td>February</td>
+    <td>February</td>
+    <td><span class="math display">\[f_i=\int_1^2\]</span></td>
+  </tr>
+</table>
+
+
+
+
+\begin{align}
+  \nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} & = \frac{4\pi}{c}\vec{\mathbf{j}} \\
+  \nabla \cdot \vec{\mathbf{E}} & = 4 \pi \rho \\
+  \nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} & = \vec{\mathbf{0}} \\
+  \nabla \cdot \vec{\mathbf{B}} & = 0
+\end{align}
+
+<table style="width:100%" rules="all" border-collapse=separate  border-spacing=150px>
+<thead>
+<tr class="header">
+<th align="center">Clase</th>
+<th align="center">Clase</th>
+<th align="center"><span class="math inline">\(f_i\)</span></th>
+<th align="center"><span class="math inline">\(F_i\)</span></th>
+<th align="center"><span class="math inline">\(F_i^*\)</span></th>
+<th align="center"><span class="math inline">\(h_i\)</span></th>
+<th align="center"><span class="math inline">\(H_i\)</span></th>
+<th align="center"><span class="math inline">\(H_i^*\)</span></th>
+<th align="center"><span class="math inline">\(\ldots\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\([y_1-y_2&gt;\)</span></td>
+<td align="center"><span class="math inline">\(y_1\)</span></td>
+<td align="center"><span class="math inline">\(f_1\)</span></td>
+<td align="center"><span class="math inline">\(F_1\)</span></td>
+<td align="center"><span class="math inline">\(F_1^*\)</span></td>
+<td align="center"><span class="math inline">\(\frac{f_1}{n}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{F_1}{n}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{F_1^*}{n}\)</span></td>
+<td align="center"><span class="math inline">\(\ldots\)</span></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(&lt;y_1-y_2&gt;\)</span></td>
+<td align="center"><span class="math inline">\(y_2\)</span></td>
+<td align="center"><span class="math inline">\(f_2\)</span></td>
+<td align="center"><span class="math inline">\(F_2\)</span></td>
+<td align="center"><span class="math inline">\(F_2^*\)</span></td>
+<td align="center"><span class="math inline">\(\frac{f_2}{n}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{F_2}{n}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{F_2^*}{n}\)</span></td>
+<td align="center"><span class="math inline">\(\ldots\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(&lt;y_{r}-y_r&gt;\)</span></td>
+<td align="center"><span class="math inline">\(y_3\)</span></td>
+<td align="center"><span class="math inline">\(f_3\)</span></td>
+<td align="center"><span class="math inline">\(F_3\)</span></td>
+<td align="center"><span class="math inline">\(F_3^*\)</span></td>
+<td align="center"><span class="math inline">\(\frac{f_3}{n}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{F_3}{n}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{F_3^*}{n}\)</span></td>
+<td align="center"><span class="math inline">\(\ldots\)</span></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(\vdots\)</span></td>
+<td align="center"><span class="math inline">\(\vdots\)</span></td>
+<td align="center"><span class="math inline">\(\vdots\)</span></td>
+<td align="center"><span class="math inline">\(\vdots\)</span></td>
+<td align="center"><span class="math inline">\(\vdots\)</span></td>
+<td align="center"><span class="math inline">\(\vdots\)</span></td>
+<td align="center"><span class="math inline">\(\vdots\)</span></td>
+<td align="center"><span class="math inline">\(\vdots\)</span></td>
+<td align="center"><span class="math inline">\(\vdots\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(&lt;y_{r-1}-y_r]\)</span></td>
+<td align="center"><span class="math inline">\(y_r\)</span></td>
+<td align="center"><span class="math inline">\(f_r\)</span></td>
+<td align="center"><span class="math inline">\(F_r\)</span></td>
+<td align="center"><span class="math inline">\(F_r^*\)</span></td>
+<td align="center"><span class="math inline">\(\frac{f_r}{n}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{F_r}{n}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{F_r^*}{n}\)</span></td>
+<td align="center"><span class="math inline">\(...\)</span></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+Here's one using the equation environment:
+\begin{equation}\label{ref2}
+x+1\over\sqrt{1-x^2}
+\end{equation}
+and one with equation* environment:
+\begin{equation*}
+x+1\over\sqrt{1-x^2}
+\end{equation*}
+
+
+
+This is a forward reference \eqref{ref3} and another \eqref{ref2} for the 
+following equation:
+$$x+1\over\sqrt{1-x^2}$$
+More math:
+$$x+1\over\sqrt{1-x^2}$$
+Here is a ref inside math: \(\ref{ref3}+1\) and text after it.
+
+\begin{align*} 
+x& = y_1-y_2+y_3-y_5+y_8-\dots 
+&& \text{by \eqref{ref3}}\notag\\ 
+& = y'\circ y^* && \text{(by \eqref{ref3})}\\ 
+& = y(0) y' && \text {by Axiom 1.} 
+\end{align*} 
+
+Here's a bad ref [\ref{ref3}] to a nonexistent label.
+
+
+
+An alignment:
+\begin{align}
+a&=b\label{ref3}\cr
+&=c+d
+\end{align}
+and a starred one:
+\begin{align*}
+a&=b\cr
+&=c+d
+\end{align*}
+
+
+
+
 </body>
 </html>
+
+
