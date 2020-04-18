@@ -36,7 +36,7 @@ MathJax.Hub.Config({
     
 <div class="all">
 <header class="logotipo">
-    <h1>Mi primera Página \(\sum_1^{\infty}\)
+    <h1>Mi r primera Página \(\sum_1^{\infty}\)
         <img src="screenshots/wwwhite.svg" width="70" alt="">
     </h1>
     
@@ -402,6 +402,255 @@ a&=b\cr
 \end{align*}
 
     </article>
+
+
+<article>
+  <style>
+    * {
+      padding: 0px;
+      margin: 0px;
+      font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+    }
+  
+  
+    .calculadora {
+      background-color: #e2e2e2;
+      width: fit-content;
+      margin: auto;
+      margin-top: 35px
+    }
+  
+    .sr {
+      padding: 0px 18px 18px 18px;
+    }
+  
+    .sr button {
+      width: 100%;
+      background-color: #48c;
+      color: #fff;
+      border: none;
+      font-size: 50px;
+      padding: 0px
+    }
+  
+    .teclas {
+      display: flex;
+    }
+  
+    .pantalla {
+      padding: 10px;
+    }
+  
+    .numeros {
+      padding: 10px;
+    }
+  
+    .op {
+      padding: 10px
+    }
+  
+    #resultado {
+      background-color: #666;
+      color: #eee;
+      padding: 6px;
+      font-family: monospace;
+      font-size: 20px
+    }
+  
+    .op button {
+      display: block;
+      border-radius: 10px;
+      width: 54px;
+      height: 54px;
+      padding: 9px 15px;
+      background-color: #000;
+      color: #fff;
+      border: none;
+    }
+  
+    .numeros div {
+      text-align: center;
+    }
+  
+    .numeros button {
+      border: 0px;
+      border-radius: 10px;
+      background-color: #139a64;
+      transition: all 0.09s
+    }
+  
+    .numeros button:hover {
+      box-shadow: 0px 0px 10px #aaa;
+    }
+  
+    button {
+      margin: 2px 0px;
+      padding: 15px 24px;
+      font-size: 19px;
+    }
+  </style>
+  
+  <div class="calculadora">
+    <div class="pantalla">
+      <div id="resultado"></div>
+    </div>
+    <div class="teclas">
+      <div class="numeros">
+        <div>
+          <button id="n1">1</button>
+          <button id="n2">2</button>
+          <button id="n3">3</button>
+        </div>
+        <div>
+          <button id="n4">4</button>
+          <button id="n5">5</button>
+          <button id="n6">6</button>
+        </div>
+        <div>
+          <button id="n7">7</button>
+          <button id="n8">8</button>
+          <button id="n9">9</button>
+        </div>
+        <div>
+          <button id="n0">0</button>
+        </div>
+      </div>
+      <div class="op">
+        <button id="s">+</button>
+        <button id="r">-</button>
+        <button id="d">÷</button>
+        <button id="m">x</button>
+      </div>
+    </div>
+    <div class="sr">
+      <button id="sr">=</button>
+    </div>
+  </div>
+  <script>
+    document.getElementById("n1").addEventListener("click", n1);
+    document.getElementById("n2").addEventListener("click", n2);
+    document.getElementById("n3").addEventListener("click", n3);
+    document.getElementById("n4").addEventListener("click", n4);
+    document.getElementById("n5").addEventListener("click", n5);
+    document.getElementById("n6").addEventListener("click", n6);
+    document.getElementById("n7").addEventListener("click", n7);
+    document.getElementById("n8").addEventListener("click", n8);
+    document.getElementById("n9").addEventListener("click", n9);
+    document.getElementById("n0").addEventListener("click", n0);
+    document.getElementById("s").addEventListener("click", o1);
+    document.getElementById("r").addEventListener("click", o2);
+    document.getElementById("d").addEventListener("click", o3);
+    document.getElementById("m").addEventListener("click", o4);
+    document.getElementById("sr").addEventListener("click", showResult);
+
+    function n1() {
+      let actual = document.getElementById('resultado').innerHTML;
+      let sumado = document.getElementById("n1").innerHTML;
+      document.getElementById('resultado').innerHTML = actual + sumado
+    }
+    function n2() {
+      let actual = document.getElementById('resultado').innerHTML;
+      let sumado = document.getElementById("n2").innerHTML;
+      document.getElementById('resultado').innerHTML = actual + sumado
+    }
+    function n3() {
+      let actual = document.getElementById('resultado').innerHTML;
+      let sumado = document.getElementById("n3").innerHTML;
+      document.getElementById('resultado').innerHTML = actual + sumado
+    }
+    function n4() {
+      let actual = document.getElementById('resultado').innerHTML;
+      let sumado = document.getElementById("n4").innerHTML;
+      document.getElementById('resultado').innerHTML = actual + sumado
+    }
+    function n5() {
+      let actual = document.getElementById('resultado').innerHTML;
+      let sumado = document.getElementById("n5").innerHTML;
+      document.getElementById('resultado').innerHTML = actual + sumado
+    }
+    function n6() {
+      let actual = document.getElementById('resultado').innerHTML;
+      let sumado = document.getElementById("n6").innerHTML;
+      document.getElementById('resultado').innerHTML = actual + sumado
+    }
+    function n7() {
+      let actual = document.getElementById('resultado').innerHTML;
+      let sumado = document.getElementById("n7").innerHTML;
+      document.getElementById('resultado').innerHTML = actual + sumado
+    }
+    function n8() {
+      let actual = document.getElementById('resultado').innerHTML;
+      let sumado = document.getElementById("n8").innerHTML;
+      document.getElementById('resultado').innerHTML = actual + sumado
+    }
+    function n9() {
+      let actual = document.getElementById('resultado').innerHTML;
+      let sumado = document.getElementById("n9").innerHTML;
+      document.getElementById('resultado').innerHTML = actual + sumado
+    }
+    function n0() {
+      let actual = document.getElementById('resultado').innerHTML;
+      let sumado = document.getElementById("n0").innerHTML;
+      document.getElementById('resultado').innerHTML = actual + sumado
+    }
+
+    function o1() {
+      let actual = document.getElementById('resultado').innerHTML;
+      let sumado = document.getElementById("s").innerHTML;
+      document.getElementById('resultado').innerHTML = actual + sumado
+    }
+
+    function o2() {
+      let actual = document.getElementById('resultado').innerHTML;
+      let sumado = document.getElementById("r").innerHTML;
+      document.getElementById('resultado').innerHTML = actual + sumado
+    }
+
+    function o3() {
+      let actual = document.getElementById('resultado').innerHTML;
+      let sumado = document.getElementById("d").innerHTML;
+      document.getElementById('resultado').innerHTML = actual + sumado
+    }
+
+    function o4() {
+      let actual = document.getElementById('resultado').innerHTML;
+      let sumado = document.getElementById("m").innerHTML;
+      document.getElementById('resultado').innerHTML = actual + sumado
+    }
+
+    function showResult() {
+      let actual = document.getElementById('resultado').innerHTML;
+      let suma = actual.indexOf("+");
+      let resta = actual.indexOf("-");
+      let div = actual.indexOf("÷");
+      let mult = actual.indexOf("x");
+      if (suma !== -1) {
+        arr = actual.split("+", 2);
+        res = parseInt(arr[0]) + parseInt(arr[1]);
+        document.getElementById("resultado").innerHTML = res;
+      } else if (resta !== -1) {
+        arr = actual.split("-", 2);
+        res = arr[0] - arr[1];
+        document.getElementById("resultado").innerHTML = res;
+
+      } else if (div !== -1) {
+        arr = actual.split("÷", 2);
+        res = arr[0] / arr[1];
+        document.getElementById("resultado").innerHTML = res;
+
+      } else if (mult !== -1) {
+        arr = actual.split("x", 2);
+        res = arr[0] * arr[1];
+        document.getElementById("resultado").innerHTML = res;
+
+      }
+    }
+  </script>
+
+</article>
+
+
+
     </section>
     
     <aside>
@@ -423,6 +672,12 @@ a&=b\cr
     </aside>
     
     
+
+
+
+
+
+
 
 <footer>
     <p>Ricardo Mallqui Baños</p>  
