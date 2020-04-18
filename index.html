@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
 <head>
 <title>MathJax Test Page</title>
-
-
+<link rel="shortcut icon" type="image/x-icon" href="screenshots/ww.ico">
+<meta charset="utf-8">
 <!--mathjax-->
 <script>
   (function () {
@@ -25,276 +25,147 @@ MathJax.Hub.Config({
   "HTML-CSS": { availableFonts: ["Tex"] }
 });
 </script>
+    
+    <link rel="stylesheet" type="text/css" href="main.css">
+    
 
 
-
-
-
-<style>
-body {
-  counter-reset: myAwesomeCounter;
-  background-color: rgb(10, 9, 80);
-  color: black;
-  font-family: serif;
-  width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-h1 {
-  color: black;
-  text-align: center;
-  background-color: #075e57;
-}
-
-h2 {
-  color: brow;
-  text-align: left;
-  background-color: #0CA481;
-  border: 1px solid red;
-  border-radius: 3px 3px;
-  border-spacing: 15px;
-  display: block;
-  font-size: 1.17em;
-  margin-top: 1em;
-  margin-bottom: 1em;
-  margin-left: ;
-  margin-right: 0;
-}
-
-
-p {
-  font-family: serif;
-  text-align: justify;
-  text-justify: inter-word;
-}
-
-p.a {
-  word-break: normal;
-}
-
-p.b {
-  word-break: keep-all;
-}
-
-p.c {
-  word-break: break-all;
-}
-
-
-.article {
-	counter-reset: figures;
-}
-
-.figure figcaption {
-	counter-increment: figures;
-}
-
-.figure figcaption:before {
-	content: 'Fig. ' counter(figures) ' - ';
-}
-
-.figure figcaption {
-	font-weight: 700;
-	text-transform: uppercase;
-	letter-spacing: 2px;
-	font-size: 0.8em;
-	padding: .5em;
-	text-align: center;
-	color: #fff;
-	background: #f5bca8;
-}
-
-td {
-  text-align: center;
-  vertical-align: middle;
-}
-
-
-
-</style>
 </head>
 
-
-
-
-
-
 <body>
+    
+<div class="all">
+<header class="logotipo">
+    <h1>Mi first primera Página \(\sum_1^{\infty}\)
+        <img src="screenshots/wwwhite.svg" width="70" alt="">
+    </h1>
+    
+    
+    <nav>
+        <ul>
+          <li><a href="#">1ww</a></li>
+          <li><a href="#">1wwww</a></li>
+          <li><a href="#">1wwee</a></li>
+          <li><a href="#">1wwrr</a></li>
+          <li><a href="#">1ww77</a></li>
+        </ul>
+    </nav>
+    
+    </header>
+    
+<section class="main">
+    
+    
+    <article><h2>Primero ww</h2><p>
+      
+        <div>
+       	<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<div id="graphDiv"></div>
+<script>
+  var trace1 = {
+  x: [1, 2, 3, 4, 3],
+  y: [4, 6, 3, 5, 2],
+  type: 'scatter'
+};
 
-<noscript>
-<div style="color:#CC0000; text-align:center">
-<b>Warning: <a href="http://www.mathjax.org/">MathJax</a>
-requires JavaScript to process the mathematics on this page.<br />
-If your browser supports JavaScript, be sure it is enabled.</b>
-</div>
-<hr>
-</noscript>
+var data = [trace1];
 
-<h1>Sample MathJax Equations</h1>
+var layout = {
+    title: 'Graph Title'
+};
 
+Plotly.newPlot(graphDiv, data, layout);
 
-<div style="text-align: center;">
-<iframe height="1000px" scrolling="yes" src="https://www.geogebra.org/material/iframe/id/MSR2GCc7/width/800/height/1000/border/888888/smb/true/stb/true/stbh/true/ai/true/asb/true/sri/true/rc/true/ld/true/sdz/true/ctl/true" style="border: 0px;" title="Vector y recta " width="800px"> </iframe>
-
-
-<p class="b">
-To make sure floated figures don’t behave oddly on small screens, we need to override a couple of styles to make them full-width and horizontally centered. If you’re building your site using a mobile first approach, you’ll do it the other way but it doesn’t matter really.
-To make sure floated figures don’t behave oddly on small screens, we need to override a couple of styles to make them full-width and horizontally centered. If you’re building your site using a mobile first approach, you’ll do it the other way but it doesn’t matter really.
- \begin{align*}
-\dot{x} & = \sigma(y-x) \\
-\dot{y} & = \rho x - y - xz \\
-\dot{z} & = -\beta z + xy
-\end{align*} 
-To make sure floated figures don’t behave oddly on small screens, we need to override a couple of styles to make them full-width and horizontally centered. If you’re building your site using a mobile first approach, you’ll do it the other way but it doesn’t matter really.
-</p>
-
-<h2>word-break: normal (default):</h2>
-<p class="a">Thisissomeveryveryverylong word. Words will break according to usual rules.</p>
-
-<h2>word-break: keep-all:</h2>
-<p class="b">Thisissomeveryveryverylong word. This text will-break-at-hyphens.</p>
-
-<h2>word-break: break-all:</h2>
-<p class="c">Thisissomeveryveryverylong word. This text will break at any character.</p>
-
-
-<h2>The Lorenz Equations</h2>
-<div class="form-row">
-<label>\(\sqrt{3x-1}+(1+x)^2=\)</label><input type="text" id="w1">
-</div>
-<div class="form-row">
-<label>\(\sqrt{3x-1}+(1+x)^2=\)</label><input type="text" id="w2">
-</div>
-
-<div class="form-row">
-<label>\(\sqrt{3x-1}+(1+x)^2=\)</label><input type="text" id="w3">
-</div>
-
-<div class="form-row">
-<label>Aplicaciones \(\sqrt{3x-1}+(1+x)^2=\)</label>
-<select id="app">
-<option>\(\sqrt{3x-1}+(1+x)^2=9\)</option>
-<option>\(\sqrt{3x-1}+(1+x)^2=5\)</option>
-<option>\(\sqrt{3x-1}+(1+x)^2=3\)</option>
-</select>
+Plotly.addTraces(graphDiv, {x: [1, 2, 3, 4],y: [12, 3, 14, 4]});
+</script>
+</div>        
+      
+        
+  <br />     
+        
 <div>
-<button id="btn">Registrar</button>
 
-<script>
-
-
-  document.getElementById("btn").addEventListener("click",doStuff);
-  
-  function doStuff(){
-      var er={};
-  
-      er.we = document.getElementById("w1").value;
-      er.wee = document.getElementById("w2").value;
-      er.weee = document.getElementById("w3").value;
-            er.weee = document.getElementById("app").value;
-      google.script.run.userClicked(er);
-      document.getElementById("w1").value = "";      
-      document.getElementById("w2").value = ""; 
-      document.getElementById("w3").value = "";      
-      document.getElementById("app").value = ""; 
-}
-
-
-</script>
-
-
-<h3>www</h3>
-
-Select your favorite color: <input type="color" id="r">
-
-<p>Click the "Try it" button to get the color of the color picker.</p>
-
-<button onclick="re()">Try it</button>
-
-<p><b>Note:</b> type="color" is not supported in Internet Explorer 11 and earlier versions or Safari 9.1 and earlier versions.</p>
-
-<p id="demo"></p>
-
-<script>
-function re() {
-  var x = document.getElementById("r").value;
-  document.getElementById("demo").innerHTML = x;
-}
-</script>
-
-
-
-
-
-
-<h3>A demonstration of how to access a Search field</h3>
-
-<input type="search" id="mySearch" placeholder="Search for something..">
-
-<p>Click the button to get the placeholder text of the search field.</p>
-
-<button onclick="rrw()">Try it</button>
-
-<p id="demo"></p>
-
-<script>
-function rrw() {
-  var x = document.getElementById("mySearch").placeholder;
-  document.getElementById("demo").innerHTML = x;
-}
-</script>
-
-
-
-<input type="date" id="myDate" value="2014-02-09">
-
-<p>Click the button to get the date of the date field.</p>
-
-<button onclick="myFunction()">Try it</button>
-
-<p><strong>Note:</strong> input elements with type="date" do not show as any date field/calendar in IE 11 and earlier versions.</p>
-
-<p id="demo"></p>
-
-<script>
-function myFunction() {
-  var x = document.getElementById("myDate").value;
-  document.getElementById("demo").innerHTML = x;
-}
-</script>
-
-
-
-<form action="/action_page.php" id="form1">
-  <label for="fname">First name:</label>
-  <input type="text" id="fname" name="fname"><br><br>
-  <input type="submit" value="Submit">
-</form>
-
-<label for="lname">Last name:</label>
-<input type="text" id="lname" name="lname" form="form1">
-
+        <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+        <div id="myDiv"></div>
+        <script src="first.js">
+       
+        </script>
+        </div>
+        
+        
+        
+        
+        
+  <br />      
+        
+               
 <div>
-<label for="disk_c">Disk usage C:</label>
-<meter id="disk_c" value="2" min="0" max="10">2 out of 10</meter><br>
+        <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+        <div id="myDiv1"></div>
+        <script>
+       Plotly.d3.csv('https://raw.githubusercontent.com/plotly/datasets/master/clebsch-cubic.csv', function(err, rows){
+  function unpack(rows, key) {
+  return rows.map(function(row) {return parseFloat(row[key]); });
+}
 
-<label for="disk_d">Disk usage D:</label>
-<meter id="disk_d" value="0.6">60%</meter>
-</div>
+var data = [
+    {
+        type: "isosurface",
+        x: unpack(rows, 'x'),
+        y: unpack(rows, 'y'),
+        z: unpack(rows, 'z'),
+        value: unpack(rows, 'value'),
+        isomin: -10,
+        isomax: 10,
+        surface: {show: true, count: 3, fill: 2, pattern: 'odd'},
+        caps: {
+            x: {show: true},
+            y: {show: true},
+            z: {show: true}
+        },
+    }
+];
 
-<center>
+var layout = {
+    margin: {t:0, l:0, b:0},
+    scene: {
+        camera: {
+            eye: {
+                x: 1.86,
+                y: 0.61,
+                z: 0.98
+            }
+        }
+    }
+};
+
+Plotly.newPlot('myDiv1', data, layout, {showSendToCloud: true});
+});
+
+        </script>
+        </div>
+        
+        
+        <p>
+        \[\int_1^2=\lim_{n\to\infty}\sum_{i=1}^n\]
+        Un párrafo, también llamado parágrafo (del griego παράγραφος [parágraphos], y este de παρα, «próximo, semejante», y γραφος, «escritura»), es una unidad comunicativa formada por un conjunto de oraciones secuenciales que trata un mismo tema. Está compuesto por un conjunto de oraciones que tienen cierta unidad temática o que, sin tenerla, se enuncian juntas. Es un componente del texto que en su aspecto externo comienza con una mayúscula y termina en un punto y aparte. Comprende varias oraciones relacionadas sobre el mismo subtema; una de ellas expresa la idea principal. En muchas obras cultas, en cuanto escritas, todo parágrafo o párrafo suele ser indicado con el signo tipográfico llamado muchas veces calderón representado gráficamente de este modo: ¶. En ocasiones es indicado con el signo de parágrafo, conocido también como signo de sección: §.</p></article>
+
+    <article>
+        <h2>Primero</h2>
+ 
+        <!--
+            <center>
 <iframe  width="800" height="500" src="https://www.youtube.com/embed/tWJk0RmZ5uU?start=251" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <iframe src="https://www.xvideos.com/embedframe/46618037" frameborder=0 width=800 height=500 scrolling=no allowfullscreen=allowfullscreen></iframe>
 
 <iframe src="https://www.xvideos.com/embedframe/26754231" frameborder=0 width=800 height=500 scrolling=no allowfullscreen=allowfullscreen></iframe>
 </center>
-
+-->
 
 
 \begin{align*}
-\dot{x} & = \sigma(y-x) \\
+\dot{x}^77 & = \sigma(y-x) \\
 \dot{y} & = \rho x - y - xz \\
 \dot{z} & = -\beta z + xy
 \end{align*}
@@ -530,10 +401,32 @@ a&=b\cr
 &=c+d
 \end{align*}
 
+    </article>
+    </section>
+    
+    <aside>
+        
+    <blockquote>
+    <h3>Primero</h3>
+        <p>Un párrafo, también llamado parágrafo (del griego παράγραφος [parágraphos], y este de παρα, «próximo, semejante», y γραφος, «escritura»), es una unidad comunicativa formada por un conjunto de oraciones secuenciales que trata un mismo tema.</p>
+        
+    </blockquote>
+        
+        
+        
+    <blockquote>
+    <h3>Primero</h3>
+        <p>Un párrafo, también llamado parágrafo (del griego παράγραφος [parágraphos], y este de παρα, «próximo, semejante», y γραφος, «escritura»), es una unidad comunicativa formada por un conjunto de oraciones secuenciales que trata un mismo tema. §.</p>
+        
+    </blockquote>
+        
+    </aside>
+    
+    
 
-
+<footer>
+    <p>Ricardo Mallqui Baños</p>  
+      </footer>
 
 </body>
 </html>
-
-
