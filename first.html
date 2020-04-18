@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="shortcut icon" type="image/x-icon" href="screenshots/ww.ico" />
+    <meta charset="utf-8" />
+    <!--mathjax-->
+    <script>
+      (function () {
+        var script = document.createElement("script");
+        script.type = "text/javascript";
+        var src = "true";
+        if (src === "" || src === "true")
+          src =
+            "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+        if (location.protocol !== "file:")
+          if (/^https?:/.test(src)) src = src.replace(/^https?:/, "");
+        script.src = src;
+        document.getElementsByTagName("head")[0].appendChild(script);
+      })();
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: {equationNumbers: { autoNumber:"AMS"}},
+        "HTML-CSS": { availableFonts: ["Tex"] }
+      });
+    </script>
+
+    <link rel="stylesheet" type="text/css" href="main.css" />
+  </head>
+
+  <body>
+    <h1>First</h1>
+    <section>
+      <article>
+        \[\prod_1^3\]
+      </article>
+      <article>
+        \(\rho\)
+      </article>
+    </section>
+  </body>
+</html>
