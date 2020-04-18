@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,height=device-height,initial-scale=1"
+    />
+    <title>Loads of span elements</title>
+    <link rel="stylesheet" href="screen.css" media="screen" />
+    <style media="screen">
+      body {
+          background-color: #f0f0f0;
+          font: 1em/150% verdana, arial, helvetica, sans-serif;
+      }
+
+      #header {
+          font-size: 1em;
+          text-align: center;
+          '
+
+      }
+
+      .nojs::before {
+          content: 'JavaScript is required to view this page.';
+      }
+
+      .js::before {
+          content: 'Loads of span elements.';
+      }
+
+      .hide {
+          display: none;
+      }
+
+      .show {
+          display: flex;
+      }
+
+      #loads-of-span-elements {
+          flex-wrap: wrap;
+          justify-content: center;
+          max-width: 62.5em;
+          padding: 5em;
+          margin: auto;
+          box-sizing: border-box;
+          background-color: #565a5c;
+          box-shadow: 0.4em 0.4em 0.4em rgba(0, 0, 0, 0.3);
+          font-family: georgia, serif;
+          font-size: 1em;
+
+      }
+
+      #loads-of-span-elements span {
+          margin: 0 0.25em;
+      }
+
+      #loads-of-span-elements span:nth-child(5n+1) {
+          color: #334;
+      }
+
+      #loads-of-span-elements span:nth-child(5n+2) {
+          color: #958;
+      }
+
+      #loads-of-span-elements span:nth-child(5n+3) {
+          color: #9bd;
+      }
+
+      #loads-of-span-elements span:nth-child(5n+4) {
+          color: #59c;
+      }
+
+      #loads-of-span-elements span:nth-child(5n+5) {
+          color: #d9a;
+      }
+
+      #loads-of-span-elements span:nth-child(5n+6) {
+          color: #fff;
+      }
+
+      @media (max-width: 65em) {
+          #loads-of-span-elements {
+              max-width: 46.75em;
+          }
+      }
+
+      @media (max-width: 50em) {
+          #loads-of-span-elements {
+              max-width: 38.25em;
+          }
+      }
+
+      @media (max-width: 38.5em) {
+          #loads-of-span-elements {
+              max-width: 30.375em;
+          }
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1 id="header" class="nojs">&nbsp;</h1>
+    <div id="loads-of-span-elements" class="hide"></div>
+
+    <script>
+      (function (d) {
+        "use strict";
+
+        var div = d.getElementById("loads-of-span-elements");
+        div.classList.remove("hide");
+        div.classList.add("show");
+        d.getElementById("header").classList.remove("nojs");
+        d.getElementById("header").classList.add("js");
+        var quantity = 8;
+        for (var c = 0; c < quantity; c++) {
+          var span = d.createElement("span");
+          span.appendChild(d.createTextNode("example"));
+          div.appendChild(span);
+        }
+      })(document);
+    </script>
+  </body>
+</html>
